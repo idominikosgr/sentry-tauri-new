@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "esnext",
     "strict": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-    ],
+    "lib": ["ESNext", "DOM"],
     "noEmitOnError": true,
     "isolatedModules": true,
     // module resolution
@@ -17,10 +14,6 @@
     "outDir": "../dist/",
     "declaration": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "./**/*"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["./**/*"]
 }

@@ -14,18 +14,30 @@
     "build:ts": "tsc --project ./js/tsconfig.json && rollup -c ./js/rollup.config.mjs",
     "build:rust": "cargo build",
     "example": "cd examples/basic-app && yarn && yarn tauri dev",
-    "prepublishOnly": "yarn build"
-  },
-  "devDependencies": {
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@sentry/browser": "^10.8.0",
-    "@sentry/core": "^10.8.0",
-    "rollup": "^4.50.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "typescript": "^5.1.6"
+    "prepublishOnly": "yarn build",
+    "check": "oxlint . && oxfmt --check .",
+    "check:fix": "oxlint --fix . && oxfmt --write .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint -f github . > lint.md 2>&1",
+    "lint:fix": "oxlint -f stylish --fix .",
+    "lint:fix-unsafe": "oxlint -f stylish --react-plugin --import-plugin --react-perf-plugin --nextjs-plugin --type-aware --type-check --vitest-plugin --fix --fix-suggestions --fix-dangerously .",
+    "check:fix-suggestions": "oxlint -f stylish --react-plugin --import-plugin --react-perf-plugin --nextjs-plugin --type-aware --type-check --vitest-plugin --fix --fix-suggestions . && oxfmt --write .",
+    "type-check": "tsgo --noEmit"
   },
   "dependencies": {
-    "@tauri-apps/api": "2.0.0-beta.8",
-    "tslib": "^2.6.0"
+    "@tauri-apps/api": "2.11.0",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@sentry/browser": "^10.58.0",
+    "@sentry/core": "^10.58.0",
+    "oxfmt": "^0.55.0",
+    "oxlint": "^1.70.0",
+    "oxlint-tsgolint": "^0.23.0",
+    "rollup": "^4.62.0",
+    "typescript": "^6.0.3"
   }
 }

@@ -34,16 +34,14 @@ Run one of these commands to add the capabilities:
 
 however, make sure that you have `sentry:default` in your capabilities:
 
-###### src-tauri/capabilities/*.json
+###### src-tauri/capabilities/\*.json
 
 ```json
 {
   "$schema": "./../gen/schemas/windows-schema.json",
   "identifier": "main",
   "local": true,
-  "windows": [
-    "main"
-  ],
+  "windows": ["main"],
   "permissions": [
     "sentry:default" // <- important
   ]
@@ -107,8 +105,8 @@ tauri::Builder::default()
 ```
 
 ```ts
-import { defaultOptions } from "tauri-plugin-sentry-api";
-import * as Sentry from "@sentry/browser";
+import { defaultOptions } from 'tauri-plugin-sentry-api';
+import * as Sentry from '@sentry/browser';
 
 Sentry.init({
   ...defaultOptions,

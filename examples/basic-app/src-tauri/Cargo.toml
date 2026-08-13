@@ -2,7 +2,7 @@
 authors = ["you"]
 default-run = "app"
 description = "A Tauri App"
-edition = "2021"
+edition = "2024"
 license = ""
 name = "app"
 repository = ""

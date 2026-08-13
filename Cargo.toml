@@ -1,6 +1,6 @@
 [package]
 description = "An experimental Tauri Plugin for Sentry"
-edition = "2021"
+edition = "2024"
 license = "MIT OR Apache-2.0"
 name = "tauri-plugin-sentry"
 readme = "README.md"
@@ -15,14 +15,14 @@ minidump = ["sentry-rust-minidump"]
 
 [dependencies]
 base64 = "0.22"
-sentry = { version = "0.46.2", default-features = false }
+sentry = { version = "0.48.2", default-features = false }
 serde = "1"
 tauri = { version = "2", default-features = false }
 thiserror = "2"
 schemars = "1.2.1"
 
 [target.'cfg(not(target_os = "ios"))'.dependencies]
-sentry-rust-minidump = { version = "0.14.0", optional = true }
+sentry-rust-minidump = { version = "0.16.0", optional = true }
 
 [build-dependencies]
 tauri-plugin = { version = "2", features = ["build"] }
